@@ -1,0 +1,334 @@
+/**
+ * Portfolio - Yoann Pawlak--Camassa
+ * Version nettoyée et optimisée
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600,700|Montserrat|Poppins:400,500,600,700");
+
+/* === BASE STYLES === */
+body {
+  line-height: 1.8;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  color: #232323;
+  letter-spacing: 0.5px;
+}
+
+h1, .h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+h2, .h2 {
+  font-size: 38px;
+  text-transform: uppercase;
+}
+
+h3, .h3 {
+  font-size: 28px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+h4, .h4 {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  transition: all 0.35s ease;
+}
+
+a:hover, a:focus {
+  color: rgb(245, 99, 75) !important;
+  text-decoration: none !important;
+  outline: 0;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 18px 35px;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 700;
+  transition: all 0.5s ease;
+  border: 1px solid transparent;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, rgb(245, 99, 75) 0%, #fe9418 100%);
+  color: #fff;
+}
+
+.btn-main:hover {
+  background: linear-gradient(90deg, #fe9418 0%, rgb(245, 99, 75) 100%);
+  color: #fff !important;
+  transform: translateY(-5px);
+}
+
+/* === NAVIGATION === */
+.navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-nav li {
+  padding: 0px 10px;
+}
+
+.navbar-nav .nav-link {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: rgb(245, 99, 75);
+}
+
+.navbar-toggler {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  padding: 5px 10px;
+}
+
+.navbar-collapse.collapse.show {
+  background: #181a23;
+}
+
+.fixed-nav {
+  background: #181a23;
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 70px;
+}
+
+.section-title p {
+  color: #666;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* === SLIDER === */
+.slider {
+  background: url("../images/bg/bg-7.jpg") no-repeat 0% 30%;
+  background-size: cover;
+  padding: 180px 0px;
+  position: relative;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+}
+
+.slider h1 {
+  font-size: 95px;
+  line-height: 95px;
+}
+
+/* === PAGE TITLE === */
+.page-title {
+  padding: 155px 0 100px;
+  position: relative;
+}
+
+.page-title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+}
+
+.bg-2 {
+  background: url("../images/bg/bg-image-2-1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 10px;
+}
+
+/* === SERVICES === */
+.hover-style-1 {
+  position: relative;
+}
+
+.hover-style-1:before {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 0px;
+  transition: all 600ms ease;
+  background: linear-gradient(90deg, rgb(245, 99, 75) 0%, #fe9418 100%);
+  border-color: rgb(245, 99, 75);
+}
+
+.hover-style-1 h3, 
+.hover-style-1 p, 
+.hover-style-1 a, 
+.hover-style-1 i, 
+.hover-style-1 h4 {
+  position: relative;
+  transition: all 600ms ease;
+}
+
+.hover-style-1:hover:before {
+  height: 100%;
+}
+
+.hover-style-1:hover h3,
+.hover-style-1:hover h4,
+.hover-style-1:hover p,
+.hover-style-1:hover a {
+  color: #fff;
+}
+
+.hover-style-1:hover i {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* === FOOTER === */
+.footer {
+  padding-top: 90px;
+  padding-bottom: 45px;
+}
+
+.footer p {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.bg-black-50 {
+  background: #181a23;
+}
+
+.footer-menu li a {
+  color: #fff;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.footer-menu li a:hover {
+  color: rgb(245, 99, 75);
+  opacity: 1;
+}
+
+.lh-40 {
+  line-height: 40px;
+}
+
+/* === UTILITY CLASSES === */
+.text-color {
+  color: rgb(245, 99, 75);
+}
+
+.text-lg {
+  font-size: 56px;
+  line-height: 66px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.letter-spacing {
+  letter-spacing: 1px;
+}
+
+.divider {
+  margin: 0 auto;
+  background: rgb(245, 99, 75);
+  width: 45px;
+  height: 4px;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .media {
+    display: block;
+  }
+  
+  .media-body {
+    margin-top: 20px;
+  }
+  
+  .services .media img {
+    width: 100% !important;
+  }
+  
+  .navbar-nav li {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  
+  .text-lg {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  
+  .lead {
+    font-size: 1rem;
+  }
+  
+  .media {
+    display: block;
+  }
+  
+  .media-body {
+    margin-top: 20px;
+  }
+  
+  .navbar-nav li {
+    padding: 0px;
+  }
+}
