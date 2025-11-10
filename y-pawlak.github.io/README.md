@@ -1,1 +1,0 @@
-# y-pawlak.github.io
