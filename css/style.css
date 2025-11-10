@@ -57,10 +57,23 @@ a {
 }
 
 a:hover, a:focus {
-  color: rgb(245, 99, 75) !important;
+  color: rgb(33, 150, 243) !important;
   text-decoration: none !important;
   outline: 0;
 }
+
+.certification-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .certification-card:hover {
+    border-color: #2196F3;
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+    transform: translateY(-5px);
+  }
 
 /* === BUTTONS === */
 .btn {
@@ -76,12 +89,12 @@ a:hover, a:focus {
 }
 
 .btn-main {
-  background: linear-gradient(90deg, rgb(245, 99, 75) 0%, #fe9418 100%);
+  background: linear-gradient(90deg, rgb(33, 150, 243) 0%, #1976D2 100%);
   color: #fff;
 }
 
 .btn-main:hover {
-  background: linear-gradient(90deg, #fe9418 0%, rgb(245, 99, 75) 100%);
+  background: linear-gradient(90deg, #1976D2 0%, rgb(33, 150, 243) 100%);
   color: #fff !important;
   transform: translateY(-5px);
 }
@@ -106,7 +119,7 @@ a:hover, a:focus {
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-  color: rgb(245, 99, 75);
+  color: rgb(33, 150, 243);
 }
 
 .navbar-toggler {
@@ -202,8 +215,8 @@ a:hover, a:focus {
   width: 100%;
   height: 0px;
   transition: all 600ms ease;
-  background: linear-gradient(90deg, rgb(245, 99, 75) 0%, #fe9418 100%);
-  border-color: rgb(245, 99, 75);
+  background: linear-gradient(90deg, rgb(33, 150, 243) 0%, #1976D2 100%);
+  border-color: rgb(33, 150, 243);
 }
 
 .hover-style-1 h3, 
@@ -253,7 +266,7 @@ a:hover, a:focus {
 }
 
 .footer-menu li a:hover {
-  color: rgb(245, 99, 75);
+  color: rgb(33, 150, 243);
   opacity: 1;
 }
 
@@ -263,7 +276,7 @@ a:hover, a:focus {
 
 /* === UTILITY CLASSES === */
 .text-color {
-  color: rgb(245, 99, 75);
+  color: rgb(33, 150, 243);
 }
 
 .text-lg {
@@ -281,7 +294,7 @@ a:hover, a:focus {
 
 .divider {
   margin: 0 auto;
-  background: rgb(245, 99, 75);
+  background: rgb(33, 150, 243);
   width: 45px;
   height: 4px;
 }
