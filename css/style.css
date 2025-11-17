@@ -192,7 +192,13 @@ a:hover, a:focus {
 }
 
 .bg-2 {
-  background: url("../images/bg/bg-image-2-1.jpg") no-repeat;
+  background: url("../images/bg/bg-2.jpg") no-repeat;
+  background-size: cover;
+  background-position: 10px;
+}
+
+.bg-5 {
+  background: url("../images/bg/bg-5jpg") no-repeat;
   background-size: cover;
   background-position: 10px;
 }
@@ -240,8 +246,8 @@ a:hover, a:focus {
 
 /* === FOOTER === */
 .footer {
-  padding-top: 90px;
-  padding-bottom: 45px;
+  padding-top: 50px;
+  padding-bottom: 35px;
 }
 
 .footer p {
