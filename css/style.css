@@ -132,6 +132,17 @@ a:hover, a:focus {
   background: #181a23;
 }
 
+.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #181a23 !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
 /* === SECTIONS === */
 .section {
   padding: 100px 0;
