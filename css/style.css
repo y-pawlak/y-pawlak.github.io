@@ -702,3 +702,16 @@ html {
   font-size: 20px;
   margin-right: 8px;
 }
+
+.contact-error-global {
+  background: #ffebee;
+  border: 2px solid #e53935;
+  border-radius: 8px;
+  padding: 15px 20px;
+  color: #c62828;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -73,12 +73,17 @@
       <div class="row justify-content-center">
         <div class="col-lg-7">
 
-          <!-- Message de succès (affiché après envoi) -->
-          <div id="success-message" class="contact-success" style="display:none;">
+          <!-- Message de succès -->
+          <div data-fs-success class="contact-success" style="display:none;">
             <span>✓</span> Votre message a bien été envoyé ! Je vous répondrai bientôt.
           </div>
 
-          <form id="contact-form" action="https://formspree.io/f/maqvjrlv" method="POST" novalidate>
+          <!-- Message d'erreur global -->
+          <div data-fs-error class="contact-error-global" style="display:none;">
+            Une erreur est survenue. Veuillez réessayer.
+          </div>
+
+          <form id="contact-form" action="https://formspree.io/f/maqvjrlv" method="POST">
 
             <div class="form-group mb-4">
               <label for="email" class="contact-label">Votre adresse e-mail</label>
@@ -88,9 +93,10 @@
                 name="email"
                 class="contact-input"
                 placeholder="exemple@mail.com"
+                data-fs-field
                 required
               >
-              <div class="contact-error" id="email-error">Veuillez entrer une adresse e-mail valide.</div>
+              <div class="contact-error" data-fs-error="email"></div>
             </div>
 
             <div class="form-group mb-4">
@@ -100,13 +106,14 @@
                 name="message"
                 class="contact-input contact-textarea"
                 placeholder="Écrivez votre message ici..."
+                data-fs-field
                 required
               ></textarea>
-              <div class="contact-error" id="message-error">Veuillez écrire un message.</div>
+              <div class="contact-error" data-fs-error="message"></div>
             </div>
 
             <div class="text-center mt-4">
-              <button type="submit" class="btn btn-main" id="submit-btn">
+              <button type="submit" class="btn btn-main" data-fs-submit-btn>
                 Envoyer le message
               </button>
             </div>
@@ -142,65 +149,10 @@
 </div>
 
 <script>
-  const form = document.getElementById('contact-form');
-  const successMsg = document.getElementById('success-message');
-  const submitBtn = document.getElementById('submit-btn');
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    const emailError = document.getElementById('email-error');
-    const messageError = document.getElementById('message-error');
-
-    // Reset errors
-    emailError.style.display = 'none';
-    messageError.style.display = 'none';
-    email.classList.remove('input-error');
-    message.classList.remove('input-error');
-
-    // Validation
-    let valid = true;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value.trim())) {
-      emailError.style.display = 'block';
-      email.classList.add('input-error');
-      valid = false;
-    }
-    if (message.value.trim().length < 5) {
-      messageError.style.display = 'block';
-      message.classList.add('input-error');
-      valid = false;
-    }
-    if (!valid) return;
-
-    // Envoi
-    submitBtn.textContent = 'Envoi en cours...';
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      } else {
-        submitBtn.textContent = 'Envoyer le message';
-        submitBtn.disabled = false;
-        alert("Une erreur est survenue. Veuillez réessayer.");
-      }
-    } catch {
-      submitBtn.textContent = 'Envoyer le message';
-      submitBtn.disabled = false;
-      alert("Une erreur réseau est survenue. Veuillez réessayer.");
-    }
-  });
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'maqvjrlv' });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
