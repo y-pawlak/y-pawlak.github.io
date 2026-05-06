@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Contact - Yoann Pawlak--Camassa">
+  <meta name="author" content="Yoann Pawlak--Camassa">
+  <title>Portfolio - Me contacter</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Header Start -->
+<nav class="navbar navbar-expand-lg navigation fixed-top" id="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+       <h2 class="text-white text-capitalize">Portfolio <span class="text-color"></span></h2>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsid"
+      aria-controls="navbarsid" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-view-list"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsid">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="certification.html">Certification</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="projets.html">Mes projets</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="contact.html">Me contacter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Header Close -->
+
+<div class="main-wrapper">
+  <!-- Page Title Start -->
+  <section class="page-title bg-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="text-lg text-white mt-2">Me contacter</h1>
+          <p class="text-white">Une question ? N'hésitez pas à m'écrire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page Title End -->
+
+  <!-- Section Contact Start -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <div class="section-title">
+            <div class="divider mb-3"></div>
+            <h2>Envoyez-moi un message</h2>
+            <p class="mt-3">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+
+          <!-- Message de succès (affiché après envoi) -->
+          <div id="success-message" class="contact-success" style="display:none;">
+            <span>✓</span> Votre message a bien été envoyé ! Je vous répondrai bientôt.
+          </div>
+
+          <form id="contact-form" action="https://formspree.io/f/maqvjrlv" method="POST" novalidate>
+
+            <div class="form-group mb-4">
+              <label for="email" class="contact-label">Votre adresse e-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="contact-input"
+                placeholder="exemple@mail.com"
+                required
+              >
+              <div class="contact-error" id="email-error">Veuillez entrer une adresse e-mail valide.</div>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="message" class="contact-label">Votre message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="contact-input contact-textarea"
+                placeholder="Écrivez votre message ici..."
+                required
+              ></textarea>
+              <div class="contact-error" id="message-error">Veuillez écrire un message.</div>
+            </div>
+
+            <div class="text-center mt-4">
+              <button type="submit" class="btn btn-main" id="submit-btn">
+                Envoyer le message
+              </button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section Contact End -->
+
+  <!-- Footer Start -->
+  <footer class="footer bg-black-50">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center mb-4">
+          <h4 class="mb-4 text-white letter-spacing text-uppercase">Yoann Pawlak--Camassa</h4>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-4 text-center">
+          <h5 class="mb-3 text-white letter-spacing text-uppercase">Liens rapides</h5>
+          <ul class="list-unstyled footer-menu lh-40 mb-0">
+            <li><a href="index.html#about"><i class="ti-angle-double-right mr-2"></i>A propos de moi</a></li>
+            <li><a href="contact.html"><i class="ti-angle-double-right mr-2"></i>Me contacter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+</div>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-message');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+
+    // Reset errors
+    emailError.style.display = 'none';
+    messageError.style.display = 'none';
+    email.classList.remove('input-error');
+    message.classList.remove('input-error');
+
+    // Validation
+    let valid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+      emailError.style.display = 'block';
+      email.classList.add('input-error');
+      valid = false;
+    }
+    if (message.value.trim().length < 5) {
+      messageError.style.display = 'block';
+      message.classList.add('input-error');
+      valid = false;
+    }
+    if (!valid) return;
+
+    // Envoi
+    submitBtn.textContent = 'Envoi en cours...';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      } else {
+        submitBtn.textContent = 'Envoyer le message';
+        submitBtn.disabled = false;
+        alert("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch {
+      submitBtn.textContent = 'Envoyer le message';
+      submitBtn.disabled = false;
+      alert("Une erreur réseau est survenue. Veuillez réessayer.");
+    }
+  });
+</script>
+
+</body>
+</html>

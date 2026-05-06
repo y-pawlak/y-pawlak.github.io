@@ -57,21 +57,90 @@ a:hover, a:focus {
   outline: 0;
 }
 
+/* === CERTIFICATION CARDS === */
 .certification-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.certification-card:hover {
+  border-color: #2196F3;
+  box-shadow: 0 5px 20px rgba(33, 150, 243, 0.3);
+  transform: translateY(-5px);
+}
+
+.certification-card .media {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.certification-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.certification-card .media-body {
+  flex: 1;
+}
+
+.certification-card .media-body h4 {
+  color: #232323;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.certification-card .media-body p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.certification-card .text-color {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Responsive pour les cartes de certification */
+@media (max-width: 991px) {
+  .certification-card img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .certification-card .media-body h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .certification-card {
     padding: 15px;
-    border-radius: 10px;
-    height: 100%;
-    display: flex;
+  }
+  
+  .certification-card .media {
+    flex-direction: column;
+    text-align: center;
     align-items: center;
   }
-  .certification-card:hover {
-    border-color: #2196F3;
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-    transform: translateY(-5px);
+  
+  .certification-card img {
+    margin-bottom: 15px;
+    margin-right: 0 !important;
   }
+}
 
 /* === BUTTONS === */
 .btn {
@@ -359,4 +428,277 @@ a:hover, a:focus {
   .navbar-nav li {
     padding: 0px;
   }
+}
+
+/* === SMOOTH SCROLL === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === ABOUT SECTION === */
+.about-content {
+  background: #f8f9fa;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* === TIMELINE === */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #2196F3;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #2196F3;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 3px #2196F3;
+}
+
+.timeline-date {
+  color: #2196F3;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* === SKILLS === */
+.skill-item {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skill-item h5 {
+  color: #2196F3;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.skill-item i {
+  color: #2196F3 !important;
+}
+
+/* === FONT AWESOME ICONS === */
+.fas {
+  color: #2196F3 !important;
+  transition: transform 0.3s ease;
+}
+
+.hover-style-1:hover .fas {
+  transform: scale(1.1);
+}
+
+/* === STAGES SECTION === */
+.stage-item {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  height: 100%;
+  border-left: 4px solid #2196F3;
+  transition: all 0.3s ease;
+}
+
+.stage-item:hover {
+  box-shadow: 0 5px 20px rgba(33, 150, 243, 0.3);
+  transform: translateY(-5px);
+}
+
+.stage-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.stage-header h4 {
+  color: #2196F3;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.stage-date {
+  display: inline-block;
+  background: #2196F3;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stage-item h5 {
+  color: #232323;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.stage-location {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.stage-description h6 {
+  color: #2196F3;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stage-description ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.stage-description li {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 14px;
+}
+
+.stage-description p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+/* === CODINGAME LEVEL CARDS === */
+.codingame-level-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #CD7F32;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.codingame-level-card:hover {
+  box-shadow: 0 5px 20px rgba(205, 127, 50, 0.3);
+  transform: translateY(-5px);
+}
+
+.codingame-level-card .level-icon {
+  font-size: 40px;
+}
+
+.codingame-level-card h5 {
+  color: #232323;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.codingame-level-card p {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.level-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.level-badge.bronze {
+  background: linear-gradient(135deg, #CD7F32, #a0522d);
+  color: #fff;
+}
+
+/* === CONTACT FORM === */
+.contact-label {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #232323;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.contact-input:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.12);
+}
+
+.contact-input.input-error {
+  border-color: #e53935;
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-error {
+  display: none;
+  color: #e53935;
+  font-size: 13px;
+  margin-top: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-success {
+  background: #e8f5e9;
+  border: 2px solid #43a047;
+  border-radius: 8px;
+  padding: 20px 25px;
+  color: #2e7d32;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-success span {
+  font-size: 20px;
+  margin-right: 8px;
 }
